@@ -1,0 +1,48 @@
+{
+  "name": "package-webpack-mustache-loader",
+  "version": "0.0.1",
+  "description": "A qunar package team custom mustache loader for webpack",
+  "keywords": [
+    "webpack",
+    "loader",
+    "mustache",
+    "hogan",
+    "package"
+  ],
+  "homepage": "https://github.com/sdwangbaotong/package-webpack-mustache-loader",
+  "author": {
+    "name": "baotong.wang",
+    "email": "sdwangbaotong@hotmail.com",
+    "originalName": "Kir Belevich",
+    "originalEmail": "kir@soulshine.in"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sdwangbaotong/package-webpack-mustache-loader.git"
+  },
+  "main": "index.js",
+  "peerDependencies": {
+    "hogan.js": "^2.0.0",
+    "webpack": "^1.4.3"
+  },
+  "dependencies": {
+    "hogan.js": "^2.0.0",
+    "html-minifier": "^0.6.8",
+    "loader-utils": "^0.2.4"
+  },
+  "devDependencies": {
+    "eslint": "^0.8.1",
+    "jscs": "^1.6.2"
+  },
+  "scripts": {
+    "test": "eslint index.js && jscs index.js"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "license": "WTFPL",
+  "gitHead": "1433ea4b8f583245e5f1a896dde588b1bf152000",
+  "bugs": {
+    "url": "https://github.com/deepsweet/mustache-loader/issues"
+  }
+}
