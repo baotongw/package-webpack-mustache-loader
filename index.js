@@ -46,17 +46,12 @@ module.exports = function(source) {
         source = minifier.minify(source, minifierOptions);
     }
 
-    var suffix;
-    if (query.noShortcut) {
-        suffix = ';window.QTMPL=window.QTMPL||{}; window.QTMPL["'+fileName+'"] = T ;return T; }();';
-    } else {
-        suffix = 'return T.render.apply(T, arguments); };';
-    }
+    var compiledTxt = Hogan.compile(source, {
+            asString: 1
+        }),
+        compiled = ';window.QTMPL=window.QTMPL||{}; window.QTMPL["' + fileName + '"] = new window.Hogan.Template(' + compiledTxt + ');';
+    
+    var mustacheOutput = compiled + '\nif(typeof module !== "undefined") module.exports = window.QTMPL["' + fileName + '"]';
 
-    return 'module.exports = function() { ' +
-           'var T = new H.Template(' +
-           Hogan.compile(source, { asString: true }) +
-           ', ' +
-           JSON.stringify(source) +
-           ', H);' + suffix;
+    return mustacheOutput;
 };

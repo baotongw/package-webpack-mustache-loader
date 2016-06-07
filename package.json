@@ -1,6 +1,6 @@
 {
   "name": "package-webpack-mustache-loader",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A qunar package team custom mustache loader for webpack",
   "keywords": [
     "webpack",
